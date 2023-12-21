@@ -31,7 +31,7 @@ class _PlanScreenState extends State<PlanScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Master Plan Namaku')),
+      appBar: AppBar(title: const Text('Sabil')),
       body: _buildList(),
       floatingActionButton: _buildAddTaskButton(),
     );
@@ -55,13 +55,11 @@ class _PlanScreenState extends State<PlanScreen> {
   Widget _buildList() {
     return ListView.builder(
       controller: scrollController,
-      keyboardDismissBehavior: Theme.of(context).platform ==
-          TargetPlatform.iOS
-              ? ScrollViewKeyboardDismissBehavior.onDrag
-              : ScrollViewKeyboardDismissBehavior.manual,
+      keyboardDismissBehavior: Theme.of(context).platform == TargetPlatform.iOS
+          ? ScrollViewKeyboardDismissBehavior.onDrag
+          : ScrollViewKeyboardDismissBehavior.manual,
       itemCount: plan.tasks.length,
-      itemBuilder: (context, index) =>
-          _buildTaskTile(plan.tasks[index], index),
+      itemBuilder: (context, index) => _buildTaskTile(plan.tasks[index], index),
     );
   }
 
